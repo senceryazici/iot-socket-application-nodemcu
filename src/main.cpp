@@ -84,46 +84,23 @@ void loop()
 double getTemperature(SFE_BMP180 *sensor)
 {
     char status;
-    double T,P;
+    double temperature;
     status = sensor->startTemperature();
-    if (status != 0)
-    {
-        delay(status);
-        status = sensor->getTemperature(T);
-        if (status != 0)
-        {
-            return(T);
-        }
-        else Serial.println("error retrieving temperature measurement\n");
-    }
-    else Serial.println("error starting temperature measurement\n");
+    if (status != 0) delay(status);
+    sensor->getTemperature(temperature);
+    return temperature;
 }
 
 double getPressure(SFE_BMP180 *sensor)
 {
     char status;
-    double T,P;
+    double temperature, pressure;
     status = sensor->startTemperature();
-    if (status != 0)
-    {
-        delay(status);
-        status = sensor->getTemperature(T);
-        if (status != 0)
-        {
-            status = sensor->startPressure(3);
-            if (status != 0)
-            {
-                delay(status);
-                status = sensor->getPressure(P,T);
-                if (status != 0)
-                {
-                    return(P);
-                }
-                else Serial.println("error retrieving pressure measurement\n");
-            }
-            else Serial.println("error starting pressure measurement\n");
-        }
-        else Serial.println("error retrieving temperature measurement\n");
-    }
-    else Serial.println("error starting temperature measurement\n");
+    if (status != 0) delay(status);
+    sensor->getTemperature(temperature);
+    status = sensor->startPressure(3);
+    if (status != 0) delay(status);
+    sensor->getPressure(pressure,temperature);
+    return pressure;
+
 }
