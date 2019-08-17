@@ -1,0 +1,11 @@
+.pio
+.clang_complete
+.gcc-flags.json
+log/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+_static/
+_templates/
