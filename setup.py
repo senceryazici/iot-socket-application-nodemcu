@@ -12,8 +12,4 @@ setup(name='IoTSocketServer',
       author_email='senceryazici@gmail.com',
       packages=['IoTSocketServer'],
       install_requires=['pyyaml']
-      # scripts=[
-      #           'scripts/cool',
-      #           'scripts/skype',
-      #           ]
       )
