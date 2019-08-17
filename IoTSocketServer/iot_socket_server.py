@@ -8,7 +8,7 @@ import threading
 import yaml
 import time
 import logging
-from iot_logger import IotServerLogger, IotClientLogger
+from IoTSocketServer.iot_logger import IotServerLogger, IotClientLogger
 
 
 class IotProtocol(object):

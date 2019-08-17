@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from IoTSocketServer import IoTServer, IoTClient
+from IoTSocketServer.iot_socket_server import IoTServer, IoTClient
 import os
 
 
